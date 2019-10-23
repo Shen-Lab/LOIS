@@ -47,6 +47,7 @@ python train.py --problem=quadratic --save_path=./quadratic
 
 python evaluate.py --problem=quadratic --optimizer=L2L --path=./quadratic
 
+## Citation
 
 
 
