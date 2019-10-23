@@ -1,0 +1,35 @@
+#!/usr/bin/perl -w
+
+############################################################################
+#
+# COPYRIGHT
+#
+# 2002 Massachusetts Institute of Technology
+# All rights reserved.
+#
+
+use ICE::Structure;
+
+if ($#ARGV == -1) {
+    print STDERR "crd_pdb.prl infile.crd | -  [outfile.pdb] ] \n\n";
+    print STDERR "	Converts the input CRD file into PDB format.\n";
+    print STDERR "      If output file not given, outputs to STDOUT.\n";
+    print STDERR "      If input file is \"-\", inputs from STDIN.\n";
+    exit(0);
+}
+	
+my $structure = New ICE::Structure;
+
+if ($ARGV[0] eq "-") {
+    $structure->Read_CRD();
+}
+else {
+    $structure->Read_CRD($ARGV[0]);
+}
+
+if (defined $ARGV[1] ) {
+    $structure->Write_PDB($ARGV[1]);
+}
+else {
+    $structure->Write_PDB();
+}
