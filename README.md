@@ -23,6 +23,7 @@
 * force_field.py: The python implementation of CHARMM19 force field (including atom charge and rdii). 
 * prepocess_prot.py: Generate input data.
 * dataloader.py: Load input data into the model.
+* charmm_setup.prl Set up prerequsites before runing CHARMM.
 
 ### Datasets:
 * You can download data from https://drive.google.com/file/d/1x-Jye87YTWk_8WiooPJ23QJ_0zxiDT9V/view?usp=sharing.
