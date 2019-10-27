@@ -1,4 +1,4 @@
-# Learning to Optimize in Swarms, guided by posterior estimation (with application to protein docking)
+# Learning to Optimize in Swarms, guided by posterior estimation with application to protein docking
 
 ## Overview
 
@@ -15,6 +15,9 @@ TBA
 * TensorFlow >=1.13
 * [cNMA](https://github.com/Shen-Lab/cNMA) (For protein docking application)
 * [CHARMM27](https://www.charmm.org/charmm/) (For protein docking application)
+* pdb_crd.prl (under lib/ , used for minimizing initial pdbs)
+* crd_pdb.prl (under lib/ , used for minimizing initial pdbs)
+* charmm_setup.prl (under lib/ , used for minimizing initial pdbs)
 
 
 ## Important Source Files
