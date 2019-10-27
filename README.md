@@ -1,4 +1,4 @@
-# Learn to Optimize in Swarms, guided by posterior estimation (with application in protein docking)
+# Learn to Optimize in Swarms, guided by posterior estimation (with application to protein docking)
 
 
 ## Dependencies
