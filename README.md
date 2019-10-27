@@ -17,7 +17,7 @@ TBA
 * [CHARMM27](https://www.charmm.org/charmm/) (For protein docking application)
 
 
-## Main File Explanation
+## Important Source Files
 
 *  meta.py:   The architecture of the model.
 *  train.py:  The training program.
