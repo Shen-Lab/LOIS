@@ -16,6 +16,18 @@
 *  util.py:   Store the utility subroutines.
 *  evaluate.py: The evaluation programs.
 
+## Training
+
+* Example: quadratic functions (see more problem options in the code)
+python train.py --problem=quadratic --save_path=./quadratic
+
+
+## Evaluation
+
+* Example: quadratic functions (see more problem options in the code)
+python evaluate.py --problem=quadratic --optimizer=L2L --path=./quadratic
+
+
 ## Protein Docking
 
 ### File Explanation
@@ -38,14 +50,7 @@
 * 4.run get_12basis.py, force_filed.py and then prepocess_prot.py.
 
 
-## Training
 
-python train.py --problem=quadratic --save_path=./quadratic
-
-
-## Evaluation
-
-python evaluate.py --problem=quadratic --optimizer=L2L --path=./quadratic
 
 ## Citation
 
