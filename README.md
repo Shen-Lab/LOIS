@@ -1,4 +1,4 @@
-# Learn to Optimize in Swarms, guided by posterior estimation (with application to protein docking)
+# Learning to Optimize in Swarms, guided by posterior estimation (with application to protein docking)
 
 Learning to optimize has emerged as a powerful framework for various optimization and machine learning tasks. Current such "meta-optimizers" often learn from the space of continuous optimization algorithms that are point-based and uncertainty-unaware.  To overcome the limitations, we propose a meta-optimizer that learns in the algorithmic space of both point-based and population-based optimization algorithms. The meta-optimizer targets at a meta-loss function consisting of both cumulative regret and entropy. Specifically, we learn and interpret the update formula through a population of LSTMs embedded with sample- and feature-level attentions. Meanwhile, we estimate the posterior directly over the global optimum and use an uncertainty measure to help guide the learning process.
 
