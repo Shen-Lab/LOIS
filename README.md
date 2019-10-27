@@ -18,14 +18,14 @@
 
 ## Training
 
-### Example: quadratic functions (see more problem options in the code)
+Example: quadratic functions (see more problem options in the code)
 
 * python train.py --problem=quadratic --save_path=./quadratic
 
 
 ## Evaluation
 
-### Example: quadratic functions (see more problem options in the code)
+Example: quadratic functions (see more problem options in the code)
 
 * python evaluate.py --problem=quadratic --optimizer=L2L --path=./quadratic
 
