@@ -1,4 +1,4 @@
-# Learning to Optimize in Swarms, guided by posterior estimation with application to protein docking
+# Learning to Optimize in Swarms, guided by posterior estimation (with application to protein docking)
 
 ## Overview
 
