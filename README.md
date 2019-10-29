@@ -15,7 +15,6 @@ TBA
 * TensorFlow >=1.13
 * [cNMA](https://github.com/Shen-Lab/cNMA) (For protein docking application: sampling)
 * [CHARMM](https://www.charmm.org/charmm/) (For protein docking application: initial structure minimization)
-* ICE Library (https://drive.google.com/file/d/1pCow34TmhDgIaihVJXDZpVrg6MQO_8aO/view?usp=sharing) (For protein docking application) 
 
 
 ## Important Source Files
