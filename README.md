@@ -4,13 +4,24 @@
 
 Learning to optimize has emerged as a powerful framework for various optimization and machine learning tasks. Current such "meta-optimizers" often learn in the space of continuous optimization algorithms that are point-based and uncertainty-unaware.  To overcome the limitations, we propose a meta-optimizer that learns in the algorithmic space of both point-based and population-based optimization algorithms. The meta-optimizer targets at a meta-loss function consisting of both cumulative regret and entropy. Specifically, we learn and interpret the update formula through a population of LSTMs embedded with sample- and feature-level attentions. Meanwhile, we estimate the posterior directly over the global optimum and use an uncertainty measure to help guide the learning process.  Empirical results over non-convex test functions and a protein docking application demonstrate that this new meta-optimizer outperforms existing competitors. 
 
-https://arxiv.org/abs/1911.03787
+http://papers.nips.cc/paper/9641-learning-to-optimize-in-swarms
 
 ![LOIS Architecture](/LOIS-architecture.png)
 
 ## Citation
 
-TBA
+```
+@incollection{NIPS2019_9641,
+title = {Learning to Optimize in Swarms},
+author = {Cao, Yue and Chen, Tianlong and Wang, Zhangyang and Shen, Yang},
+booktitle = {Advances in Neural Information Processing Systems 32},
+editor = {H. Wallach and H. Larochelle and A. Beygelzimer and F. d\textquotesingle Alch\'{e}-Buc and E. Fox and R. Garnett},
+pages = {15018--15028},
+year = {2019},
+publisher = {Curran Associates, Inc.},
+url = {http://papers.nips.cc/paper/9641-learning-to-optimize-in-swarms.pdf}
+}
+```
 
 ## Dependencies
 
