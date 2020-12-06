@@ -59,7 +59,7 @@ def main(_):
               net_assignments=net_assignments,
               model_path = path,
               second_derivatives=FLAGS.second_derivatives)
-#这里最后一个grad的位置是为了传值到train中的sess里面验证gradient，没有实际意义，在util.py文件中也是一样
+
   step, update, reset, cost_op, x_final, test, fc_weights, fc_bias, fc_va = minimize
 #  saver=tf.train.Saver()
   with ms.MonitoredSession() as sess:
