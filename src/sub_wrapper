@@ -1,0 +1,22 @@
+#!/bin/bash
+##ENVIRONMENT SETTINGS; CHANGE WITH CAUTION
+#SBATCH --export=NONE                #Do not propagate environment
+#SBATCH --get-user-env=L             #Replicate login environment
+
+##NECESSARY JOB SPECIFICATIONS
+#SBATCH --job-name=finetune
+#SBATCH --time=24:00:00              
+#SBATCH --ntasks=1                  
+#SBATCH --mem=27G                  
+#SBATCH --gres=gpu:1                 #Request 1 GPU per node can be 1 or 2
+#SBATCH --partition=gpu              #Request the GPU partition/queue
+
+##OPTIONAL JOB SPECIFICATIONS
+#SBATCH --mail-type=ALL              #Send email on all job events
+#SBATCH --mail-user=cyppsp@tamu.edu    #Send all emails to email_address
+#SBATCH --account=122797756684
+
+
+#First Executable Line
+source activate L2L
+python train.py --problem=square_cos_$1 --optimizer=L2L --save_path=./square_cos_$1

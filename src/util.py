@@ -14,69 +14,30 @@ import pdb
 
 def run_epoch(sess, cost_op, ops, reset, num_unrolls, var1, var2):
   """Runs one optimization epoch."""
-#  print("len.cost_op",len(cost_op))
-#  print('test',sess.run(test))
-#  pdb.set_trace()
-#  print(sess.run(grad))
   start = timer()
   sess.run(reset)
-#  pdb.set_trace()
-  
-#  ops=[*zip(update, step)]
-#  print(len(ops))
   for j in xrange(num_unrolls):
-    #step = sess.run(ops)
     cost=[]
-#    print(sess.run(grad))
-#    constants = []
-#    print('test',sess.run(constant[0]))
-#    print(sess.run(cost_op))
-    #exit(0)
     step = sess.run(ops)
-    #print ("step", step)
     for i in range(len(cost_op)):
-#      sub_constant = [sess.run(item) for item in constant[i]]
       sub_cost = (sess.run([cost_op[i]]) + step)[0] 
       cost.append(sub_cost)
-#      constants.append(sub_constant)
-    #print ('l1, l2:', t1, t2, max([t2]))
     print('cost', cost)
-#    print (sess.run(pair_dis))
-#      print(sub_cost)
-#   print(ops[1])
-#   print(sess.run([cost_op[0]] + list(opss[0]))[0] )
-#    cost = [sess.run([cost_op[i]] + list(ops[i]))[0] for i in range(len(cost_op))]
+  print ('done one epoch')
   return timer() - start, cost, var1, var2
 
 def eval_run_epoch(sess, cost_op, ops, reset, num_unrolls, var1, var2):
   """Runs one optimization epoch."""
-#  print("len.cost_op",len(cost_op))
-#  print('test',sess.run(test))
-#  pdb.set_trace()
-#  print(sess.run(grad))
   start = timer()
   sess.run(reset)
-#  pdb.set_trace()
-  
-#  ops=[*zip(update, step)]
-#  print(len(ops))
   fmin=[]
   for _ in xrange(num_unrolls):
     step = sess.run(ops)
     cost=[]
-#    print(sess.run(grad))
-#    constants = []
-#    print('test',sess.run(constant[0]))
-#    print(sess.run(cost_op))
     for i in range(len(cost_op)):
-#      sub_constant = [sess.run(item) for item in constant[i]]
       sub_cost = (sess.run([cost_op[i]]) + step)[0] 
       cost.append(sub_cost)
-#      constants.append(sub_constant)
-#      print(sub_cost)
-#   print(ops[1])
-#   print(sess.run([cost_op[0]] + list(opss[0]))[0] )
-#    cost = [sess.run([cost_op[i]] + list(ops[i]))[0] for i in range(len(cost_op))]
+    print ('cost', np.mean(cost))
   return timer() - start, cost,  var2
 
 
@@ -104,7 +65,7 @@ def get_default_net_config(name, path):
   }
 
 
-def get_config(problem_name, path=None):
+def get_config(problem_name, path=None, mode='train'):
   """Returns problem configuration."""
   if problem_name == "simple":
     problem = problems.simple()
@@ -166,8 +127,9 @@ def get_config(problem_name, path=None):
     fc_vars += ["mlp/linear_{}/b".format(i) for i in xrange(2)]
     fc_vars += ["mlp/batch_norm/beta"]
     net_assignments = [("conv", conv_vars), ("fc", fc_vars)]
-  elif problem_name == "square_cos":
-    problem = problems.square_cos(batch_size=128, num_dims=2)
+  elif  "square_cos" in problem_name:
+    num_dims = int(problem_name.split('_')[-1])
+    problem = problems.square_cos(batch_size=128, num_dims=num_dims, mode=mode)
     net_config = {"cw": {
         "net": "CoordinateWiseDeepLSTM",
         "net_options": {"layers": (20, 20)},

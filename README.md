@@ -40,16 +40,18 @@ url = {http://papers.nips.cc/paper/9641-learning-to-optimize-in-swarms.pdf}
 
 ## Training
 
-Example: quadratic functions (see more problem options in the code)
+Example: 2D Rastrigin functions (see more problem options in the code)
 
-* python train.py --problem=quadratic --save_path=./quadratic
+* python train.py --problem=square_cos_2d --save_path=./square_cos_2d
 
 
 ## Evaluation
 
-Example: quadratic functions (see more problem options in the code)
+Example: 2D Rastrigin functions (see more problem options in the code)
 
-* python evaluate.py --problem=quadratic --optimizer=L2L --path=./quadratic
+* python evaluate.py --problem=square_cos_2d --optimizer=L2L --path=./square_cos_2d
+
+## Trained Models:  In trained_models/
 
 
 ## Application to Protein Docking

@@ -207,7 +207,7 @@ class MetaOptimizer(object):
   tasks.
   """
 
-  def __init__(self, **kwargs):
+  def __init__(self, problem, **kwargs):
     """Creates a MetaOptimizer.
 
     Args:
@@ -225,6 +225,7 @@ class MetaOptimizer(object):
     #intra attention x_minimal verification 
 #    self.fx_minimal = [tf.Variable(float("inf"),trainable = False) for i in range(self.num_lstm)]
     self.fx_minimal = tf.Variable(float("inf"),trainable = False)
+    self.problem = problem
     #intra attention x_minimal if fx_minimal is satisfied
     
 #    delta_shape=([784,20],[20,],[20,10],[10,])
@@ -385,12 +386,20 @@ class MetaOptimizer(object):
         variables.append(sub_vars)
       return variables
     
-    x = vars_init(sub_x)
+    if 'square_cos' in self.problem:
+       if sub_x[0].get_shape()[-1]==2:
+         s=0.2
+       else: 
+         s=1.3
+    else:
+       s=0.01
+    vars = np.random.rand(self.num_lstm,*sub_x[0].get_shape())
+    x= [tf.Variable(tf.random.normal(vars.shape, mean=0.0, stddev=s), trainable = False)]
+
+
+
     constants = vars_init(sub_constants)
     self.x_minimal = vars_init(sub_x)
-    print(sub_x, x[0].shape)
-    print(constants)
-    #exit(0)
     '''
     def intra_vars_init(x):
       variables = []
@@ -807,7 +816,6 @@ class MetaOptimizer(object):
 
 
     print (x[0].shape, x_final[0].shape,  len(fx_final),'xinfal11', len_unroll)
-    
     
     loss = entropy_loss.self_loss(x_array.stack(), fx_array.stack(), (len_unroll + 1)*self.num_lstm)
     #loss = tf.reduce_mean(tf.reduce_sum(fx_array.stack(), -1))

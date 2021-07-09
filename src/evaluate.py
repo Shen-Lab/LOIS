@@ -20,11 +20,11 @@ logging = tf.logging
 FLAGS = flags.FLAGS
 flags.DEFINE_string("optimizer", "L2L", "Optimizer.")
 flags.DEFINE_string("path", None, "Path to saved meta-optimizer network.")
-flags.DEFINE_integer("num_epochs", 10, "Number of evaluation epochs.")
+flags.DEFINE_integer("num_epochs", 1, "Number of evaluation epochs.")
 flags.DEFINE_integer("seed", None, "Seed for TensorFlow's RNG.")
 
 flags.DEFINE_string("problem", "simple", "Type of problem.")
-flags.DEFINE_integer("num_steps", 100,
+flags.DEFINE_integer("num_steps", 250,
                      "Number of optimization steps per epoch.")
 flags.DEFINE_float("learning_rate", 0.001, "Learning rate.")
 
@@ -37,7 +37,7 @@ def main(_):
 
   # Problem.
   problem, net_config, net_assignments = util.get_config(FLAGS.problem,
-                                                         FLAGS.path)
+                                                         FLAGS.path, mode='test')
 
   # Optimizer setup.
   if FLAGS.optimizer == "Adam":
@@ -52,7 +52,7 @@ def main(_):
   elif FLAGS.optimizer == "L2L":
     if FLAGS.path is None:
       logging.warning("Evaluating untrained L2L optimizer")
-    optimizer = meta.MetaOptimizer(**net_config)
+    optimizer = meta.MetaOptimizer(FLAGS.problem, **net_config)
     meta_loss = optimizer.meta_loss(problem, 1, net_assignments=net_assignments, model_path = FLAGS.path)
     loss, update, reset, cost_op, x_final, constant = meta_loss
   else:
@@ -64,8 +64,6 @@ def main(_):
     all_time_loss_record = []
     total_time = 0
     total_cost = 0
-#    pdb.set_trace()
-#    print(constant)
     x_record = [[sess.run(item) for item in x_final]]
     for _ in xrange(FLAGS.num_epochs):
       # Training.
@@ -75,9 +73,6 @@ def main(_):
       total_cost += min(cost)
       all_time_loss_record.append(cost)
       min_loss_record.append(min(cost))
-#      pdb.set_trace
-#      print(x_finals)
-      #x_record = x_record + x_finals
     with open('./{}/evaluate_record.pickle'.format(FLAGS.path),'wb') as l_record:
       record = {'all_time_loss_record':all_time_loss_record,'min_loss_record':min_loss_record,\
                 'constants':[sess.run(item) for item in constants],\

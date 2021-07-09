@@ -88,41 +88,58 @@ def quadratic(batch_size=128, num_dims=10, stddev=0.01, dtype=tf.float32):
   return build
 
 
-def square_cos(batch_size=128, num_dims=10,  stddev=0.01, dtype=tf.float32):
+def indentity_init(batch_size, num_dims, stddev):
+  return tf.eye(num_dims, batch_shape=[batch_size])+\
+  tf.random.normal(shape=[batch_size, num_dims, num_dims], stddev=stddev)
+def square_cos(batch_size=128, num_dims=None,  stddev=0.01, dtype=tf.float32, mode='train'):
+  print (num_dims)
+
   def build():
     """Builds loss graph."""
 
     # Trainable variable.
+    if mode=='test':
+      x = tf.get_variable(
+        "x",
+        shape=[batch_size, num_dims],
+        dtype=dtype,
+        initializer=tf.random_uniform_initializer(-3, 3))
+
+      return ( tf.reduce_sum(x*x - 10*tf.math.cos(2*3.1415926*x), 1)+ 10*num_dims )
+
+
+
     x = tf.get_variable(
         "x",
         shape=[batch_size, num_dims],
         dtype=dtype,
-        initializer=tf.random_normal_initializer(stddev=stddev))
+        initializer=tf.random_normal_initializer(stddev=num_dims/12.))
 
     # Non-trainable variables.
     w = tf.get_variable("w",
-                        shape=[batch_size, num_dims, num_dims],
                         dtype=dtype,
-                        initializer=tf.random_uniform_initializer(),
+                        initializer=indentity_init(batch_size, num_dims, stddev),
                         trainable=False)
+
     y = tf.get_variable("y",
                         shape=[batch_size, num_dims],
                         dtype=dtype,
-                        initializer=tf.random_uniform_initializer(),
+                        initializer=tf.random_normal_initializer(stddev=stddev),
                         trainable=False)
 
     wcos = tf.get_variable("wcos",
-                        shape=[batch_size, num_dims, num_dims],
+                        shape=[batch_size, num_dims],
                         dtype=dtype,
-                        initializer=tf.random_uniform_initializer(),
+                        initializer=tf.random_normal_initializer(mean=1.0, stddev=stddev),
                         trainable=False)
 
     product = tf.squeeze(tf.matmul(w, tf.expand_dims(x, -1)))
-    product2 = tf.squeeze(tf.matmul(wcos, tf.expand_dims(10*tf.math.cos(2*3.1415926*x), -1)))
-    product3 = tf.reduce_sum((product - y) ** 2, 1) - tf.reduce_sum(product2, 1) + 10*num_dims
-   
-    return product3
-    return tf.reduce_mean(tf.reduce_sum((product - y) ** 2, 1)) - tf.reduce_mean(tf.reduce_sum(product2, 1)) + 10*num_dims
+    product2 = tf.reduce_sum(wcos*10*tf.math.cos(2*3.1415926*x), 1)
+
+    #product3 = tf.reduce_sum((product - y) ** 2, 1) - tf.reduce_sum(product2, 1) + 10*num_dims
+
+
+    return (tf.reduce_sum((product - y) ** 2, 1)) - tf.reduce_mean(product2) + 10*num_dims
 
   return build
 

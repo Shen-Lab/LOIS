@@ -20,9 +20,9 @@ logging = tf.logging
 
 FLAGS = flags.FLAGS
 flags.DEFINE_string("save_path", None, "Path for saved meta-optimizer.")
-flags.DEFINE_integer("num_epochs", 10000, "Number of training epochs.")
+flags.DEFINE_integer("num_epochs", 1000, "Number of training epochs.")
 flags.DEFINE_integer("log_period", 100, "Log period.")
-flags.DEFINE_integer("evaluation_period", 1000, "Evaluation period.")
+flags.DEFINE_integer("evaluation_period", 100, "Evaluation period.")
 flags.DEFINE_integer("evaluation_epochs", 20, "Number of evaluation epochs.")
 
 flags.DEFINE_string("problem", "simple", "Type of problem.")
@@ -37,7 +37,7 @@ def main(_):
   # Configuration.
   num_unrolls = FLAGS.num_steps // FLAGS.unroll_length
   problem, net_config, net_assignments = util.get_config(FLAGS.problem)
-  optimizer = meta.MetaOptimizer(**net_config)
+  optimizer = meta.MetaOptimizer(FLAGS.problem, **net_config)
   if FLAGS.save_path is not None:
     if not os.path.exists(FLAGS.save_path):
       os.mkdir(FLAGS.save_path)
@@ -60,7 +60,7 @@ def main(_):
               model_path = path,
               second_derivatives=FLAGS.second_derivatives)
 
-  step, update, reset, cost_op, x_final, test, fc_weights, fc_bias, fc_va = minimize
+  step, update, reset, cost_op, x_final, test, fc_weights, fc_bias, fc_va= minimize
 #  saver=tf.train.Saver()
   with ms.MonitoredSession() as sess:
     # Prevent accidental changes to the graph.
