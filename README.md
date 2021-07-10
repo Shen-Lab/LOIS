@@ -51,7 +51,12 @@ Example: 2D Rastrigin functions (see more problem options in the code)
 
 * python evaluate.py --problem=square_cos_2d --optimizer=L2L --path=./square_cos_2d
 
-## Trained Models:  In trained_models/
+## Trained Models:  
+
+In "trained_models/":
+* 2D Rastrigin:  "square_cos_2d/"  
+* 10D Rastrigin: "square_cos_10d/"
+* 20D Rastrigin: "square_cos_20d/"
 
 
 ## Application to Protein Docking
