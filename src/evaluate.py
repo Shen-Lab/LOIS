@@ -70,11 +70,9 @@ def main(_):
       time, cost,  constants = util.eval_run_epoch(sess, cost_op, [update], reset,
                                   num_unrolls, x_final, constant)
       total_time += time
-      total_cost += min(cost)
       all_time_loss_record.append(cost)
-      min_loss_record.append(min(cost))
     with open('./{}/evaluate_record.pickle'.format(FLAGS.path),'wb') as l_record:
-      record = {'all_time_loss_record':all_time_loss_record,'min_loss_record':min_loss_record,\
+      record = {'all_time_loss_record':all_time_loss_record,'loss':cost,\
                 'constants':[sess.run(item) for item in constants],\
                 }
       pickle.dump(record, l_record)

@@ -30,7 +30,7 @@ def eval_run_epoch(sess, cost_op, ops, reset, num_unrolls, var1, var2):
   """Runs one optimization epoch."""
   start = timer()
   sess.run(reset)
-  fmin=[]
+  cost_all =[]
   for _ in xrange(num_unrolls):
     step = sess.run(ops)
     cost=[]
@@ -38,7 +38,8 @@ def eval_run_epoch(sess, cost_op, ops, reset, num_unrolls, var1, var2):
       sub_cost = (sess.run([cost_op[i]]) + step)[0] 
       cost.append(sub_cost)
     print ('cost', np.mean(cost))
-  return timer() - start, cost,  var2
+    cost_all.append(cost)
+  return timer() - start, cost_all,  var2
 
 
 def print_stats(header, total_error, total_time, n):
