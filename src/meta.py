@@ -324,7 +324,6 @@ class MetaOptimizer(object):
 #      fc_kernel_shape = ([20, 15680*2], [20, 20*2], [20, 200*2], [10, 10*2])
 #      fc_bias_shape = ([20, self.intra_features ], [20, self.intra_features], [20, self.intra_features], [10, self.intra_features])
 #      fc_va_shape=([1,20],[1,20],[1,20],[1,10])
-#      pdb.set_trace()
       
 #        x[i] = tf.reshape(x[i],[1,-1])
 #        print(x[i])
@@ -830,7 +829,6 @@ class MetaOptimizer(object):
 #      pdb.set_trace()
       variables = (nest.flatten(state) +
                    x + constants)
-#      print(variables)
 #      print(x)
       # Empty array as part of the reset process.
       reset = [tf.variables_initializer(variables), fx_array.close(), x_array.close()]
@@ -871,7 +869,6 @@ class MetaOptimizer(object):
     regular = tf.contrib.layers.apply_regularization(tf.contrib.layers.l2_regularizer(1e-4), tf.trainable_variables())
 #    gradients = optimizer.compute_gradients(info.loss+regular)
 #    capped_gradients = [(tf.clip_by_value(grad, -1., 1.), var) for grad, var in gradients if grad is not None]
-#    train_op = optimizer.apply_gradients(capped_gradients)
 #    train_op = optimizer.apply_gradients(gradients)
     step = optimizer.minimize(info.loss+regular)
 
