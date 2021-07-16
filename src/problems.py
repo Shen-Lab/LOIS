@@ -113,7 +113,7 @@ def square_cos(batch_size=128, num_dims=None,  stddev=0.01, dtype=tf.float32, mo
         "x",
         shape=[batch_size, num_dims],
         dtype=dtype,
-        initializer=tf.random_normal_initializer(stddev=num_dims/12.))
+        initializer=tf.random_uniform_initializer(-3, 3))
 
     # Non-trainable variables.
     w = tf.get_variable("w",

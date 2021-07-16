@@ -385,7 +385,7 @@ class MetaOptimizer(object):
 #        sub_vars = tf.stack(sub_vars, axis = 0)
         variables.append(sub_vars)
       return variables
-    
+    # for other functions except Rastrigin, s=0.01. 
     if 'square_cos' in self.problem:
        if sub_x[0].get_shape()[-1]==2:
          s=0.2
