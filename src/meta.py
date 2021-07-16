@@ -828,7 +828,7 @@ class MetaOptimizer(object):
     with tf.name_scope("reset"):
 #      pdb.set_trace()
       variables = (nest.flatten(state) +
-                   x + constants)
+                   x + sub_constants)
 #      print(x)
       # Empty array as part of the reset process.
       reset = [tf.variables_initializer(variables), fx_array.close(), x_array.close()]
@@ -849,7 +849,7 @@ class MetaOptimizer(object):
     print(fx_final)
     
 
-    return MetaLoss(loss, update, reset, fx_final, x_final, constants)
+    return MetaLoss(loss, update, reset, fx_final, x_final, sub_constants)
 
   def meta_minimize(self, make_loss, len_unroll, learning_rate=0.01, **kwargs):
     """Returns an operator minimizing the meta-loss.

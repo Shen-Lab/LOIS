@@ -92,7 +92,6 @@ def indentity_init(batch_size, num_dims, stddev):
   tf.random.normal(shape=[batch_size, num_dims, num_dims], stddev=stddev)
 def square_cos(batch_size=128, num_dims=None,  stddev=0.01, dtype=tf.float32, mode='train'):
   print (num_dims)
-
   def build():
     """Builds loss graph."""
 
@@ -103,7 +102,6 @@ def square_cos(batch_size=128, num_dims=None,  stddev=0.01, dtype=tf.float32, mo
         shape=[batch_size, num_dims],
         dtype=dtype,
         initializer=tf.random_uniform_initializer(-3, 3))
-
       return ( tf.reduce_sum(x*x - 10*tf.math.cos(2*3.1415926*x), 1)+ 10*num_dims )
 
 
@@ -117,19 +115,19 @@ def square_cos(batch_size=128, num_dims=None,  stddev=0.01, dtype=tf.float32, mo
     # Non-trainable variables.
     w = tf.get_variable("w",
                         dtype=dtype,
-                        initializer=indentity_init(batch_size, num_dims, stddev),
+                        initializer=indentity_init(batch_size, num_dims, stddev/num_dims),
                         trainable=False)
 
     y = tf.get_variable("y",
                         shape=[batch_size, num_dims],
                         dtype=dtype,
-                        initializer=tf.random_normal_initializer(stddev=stddev),
+                        initializer=tf.random_normal_initializer(stddev=stddev/num_dims),
                         trainable=False)
 
     wcos = tf.get_variable("wcos",
                         shape=[batch_size, num_dims],
                         dtype=dtype,
-                        initializer=tf.random_normal_initializer(mean=1.0, stddev=stddev),
+                        initializer=tf.random_normal_initializer(mean=1.0, stddev=stddev/num_dims),
                         trainable=False)
 
     product = tf.squeeze(tf.matmul(w, tf.expand_dims(x, -1)))
