@@ -42,14 +42,14 @@ url = {http://papers.nips.cc/paper/9641-learning-to-optimize-in-swarms.pdf}
 
 Example: 2D Rastrigin functions (see more problem options in the code)
 
-* python train.py --problem=square_cos_2d --save_path=./square_cos_2d
+* python train.py --problem=square_cos_2 --save_path=./square_cos_2
 
 
 ## Evaluation
 
 Example: 2D Rastrigin functions (see more problem options in the code)
 
-* python evaluate.py --problem=square_cos_2d --optimizer=L2L --path=./square_cos_2d
+* python evaluate.py --problem=square_cos_2 --optimizer=L2L --path=./square_cos_2
 
 ## Trained Models:  
 
