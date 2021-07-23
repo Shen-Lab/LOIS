@@ -54,9 +54,9 @@ Example: 2D Rastrigin functions (see more problem options in the code)
 ## Trained Models:  
 
 In "trained_models/":
-* 2D Rastrigin:  "square_cos_2d/"  
-* 10D Rastrigin: "square_cos_10d/"
-* 20D Rastrigin: "square_cos_20d/"
+* 2D Rastrigin:  "square_cos_2/"  
+* 10D Rastrigin: "square_cos_10/"
+* 20D Rastrigin: "square_cos_20/"
 
 
 ## Application to Protein Docking
