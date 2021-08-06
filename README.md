@@ -8,6 +8,11 @@ http://papers.nips.cc/paper/9641-learning-to-optimize-in-swarms
 
 ![LOIS Architecture](/LOIS-architecture.png)
 
+
+## Documentation
+
+Please look at [here](https://yuecao94.github.io/LOIS/).
+
 ## Citation
 
 ```
