@@ -1,0 +1,19 @@
+site_name: LOIS
+site_url: https://example.com/
+nav:
+    - Overview: index.md
+    - Motivation: motivation.md
+    - Installation: install.md
+    - How to use:
+      - Add your function: user_docs/func.md
+      - Training: user_docs/train.md
+      - Evaluation: user_docs/eval.md 
+    - File documentation: 
+      - overview: dev_docs/overview.md
+      - problems.py: dev_docs/problem.md
+      - utils.py: dev_docs/utils.md
+      - train.py: dev_docs/train.md
+      - evaluate.py: dev_docs/eval.md
+      - meta.py: dev_docs/meta.md
+      - network.py: dev_docs/network.md
+theme: readthedocs
