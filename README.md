@@ -11,7 +11,7 @@ http://papers.nips.cc/paper/9641-learning-to-optimize-in-swarms
 
 ## Documentation
 
-Please look at [here](https://yuecao94.github.io/LOIS/).
+Please look at [here](https://shen-lab.github.io/LOIS/).
 
 ## Citation
 
