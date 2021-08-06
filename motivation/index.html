@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="canonical" href="https://example.com/motivation/">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Motivation - LOIS</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Motivation";
+    var mkdocs_page_input_path = "motivation.md";
+    var mkdocs_page_url = "/motivation/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> LOIS</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Overview</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Motivation</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#why-we-need-learning-to-optimize">Why we need Learning to Optimize?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#what-are-the-remaining-gaps">What are the remaining gaps?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-lois">Why LOIS?</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../install/">Installation</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">How to use</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../user_docs/func/">Add your function</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../user_docs/train/">Training</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../user_docs/eval/">Evaluation</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">File documentation</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../dev_docs/overview/">overview</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../dev_docs/problem/">problems.py</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../dev_docs/utils/">utils.py</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../dev_docs/train/">train.py</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../dev_docs/eval/">evaluate.py</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../dev_docs/meta/">meta.py</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../dev_docs/network/">network.py</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">LOIS</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Motivation</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="motivation">Motivation</h1>
+<h2 id="why-we-need-learning-to-optimize">Why we need Learning to Optimize?</h2>
+<p>Optimization provides a mathematical foundation for solving quantitative problems in many fields,
+along with numerical challenges. The no free lunch theorem indicates the non-existence of a universally best optimization algorithm for all objectives. To manually design an effective optimization
+algorithm for a given problem, many efforts have been spent on tuning and validating pipelines,
+architectures, and hyperparameters.</p>
+<p>To overcome the laborious manual design, an emerging approach of meta-learning (learning to learn)
+takes advantage of the knowledge learned from related tasks. In meta-learning, the goal is to learn
+a meta-learner that could solve a set of problems, where each sample in the training or test set is a
+particular problem. As in classical machine learning, the fundamental assumption of meta-learning
+is the generalizability from solving the training problems to solving the test ones. For optimization
+problems, a key to meta-learning is how to efficiently utilize the information in the objective function
+and explore the space of optimization algorithms.</p>
+<h2 id="what-are-the-remaining-gaps">What are the remaining gaps?</h2>
+<p>The target applications of previous methods are mainly focused on training deep neural networks,
+except [19] focusing on optimizing black-box functions. There are three limitations of these methods.</p>
+<ul>
+<li>First, they learn in a limited algorithmic space, namely point-based optimization algorithms that use
+gradients or not (including SGD and Adam). So far there is no method in learning to learn that reflects
+population-based algorithms (such as evolutionary and swarm algorithms) proven powerful in many
+optimization tasks. </li>
+<li>Second, their learning is guided by a limited meta loss, often the cumulative regret
+in sampling history that primarily drives exploitation. One exception is the expected improvement
+(EI) used by [19] under Gaussian processes. </li>
+<li>Last but not the least, these methods do not interpret the
+process of learning update formula, despite the previous usage of attention mechanisms in [20].</li>
+</ul>
+<h2 id="why-lois">Why LOIS?</h2>
+<p>To overcome aforementioned limitations of current learning-to-optimize methods, we present a new
+meta-optimizer with the following contributions:</p>
+<ul>
+<li>
+<p>(<strong>Where to learn</strong>): We learn in an extended space of both point-based and population-based
+optimization algorithms.</p>
+</li>
+<li>
+<p>(<strong>How to learn</strong>): We incorporate the posterior into meta-loss to guide the search in the
+algorithmic space and balance the exploitation-exploration trade-off.</p>
+</li>
+<li>
+<p>(<strong>What more to learn</strong>): We design a novel architecture where a population of LSTMs jointly
+learn iterative update formula for a population of samples and embedded sample- and
+feature-level attentions to explain the formula</p>
+</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../install/" class="btn btn-neutral float-right" title="Installation">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../install/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme_extra.js" defer></script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
