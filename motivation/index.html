@@ -59,6 +59,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#why-lois">Why LOIS?</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#references">References</a>
+    </li>
     </ul>
                     </li>
                 </ul>
@@ -140,7 +142,7 @@ problems, a key to meta-learning is how to efficiently utilize the information i
 and explore the space of optimization algorithms.</p>
 <h2 id="what-are-the-remaining-gaps">What are the remaining gaps?</h2>
 <p>The target applications of previous methods are mainly focused on training deep neural networks,
-except [19] focusing on optimizing black-box functions. There are three limitations of these methods.</p>
+except [1] focusing on optimizing black-box functions. There are three limitations of these methods.</p>
 <ul>
 <li>First, they learn in a limited algorithmic space, namely point-based optimization algorithms that use
 gradients or not (including SGD and Adam). So far there is no method in learning to learn that reflects
@@ -148,9 +150,9 @@ population-based algorithms (such as evolutionary and swarm algorithms) proven p
 optimization tasks. </li>
 <li>Second, their learning is guided by a limited meta loss, often the cumulative regret
 in sampling history that primarily drives exploitation. One exception is the expected improvement
-(EI) used by [19] under Gaussian processes. </li>
+(EI) used by [1] under Gaussian processes. </li>
 <li>Last but not the least, these methods do not interpret the
-process of learning update formula, despite the previous usage of attention mechanisms in [20].</li>
+process of learning update formula, despite the previous usage of attention mechanisms in [2].</li>
 </ul>
 <h2 id="why-lois">Why LOIS?</h2>
 <p>To overcome aforementioned limitations of current learning-to-optimize methods, we present a new
@@ -170,6 +172,13 @@ learn iterative update formula for a population of samples and embedded sample- 
 feature-level attentions to explain the formula</p>
 </li>
 </ul>
+<h2 id="references">References</h2>
+<p>[1] Yutian Chen, Matthew W Hoffman, Sergio Gómez Colmenarejo, Misha Denil, Timothy P
+Lillicrap, Matt Botvinick, and Nando de Freitas. Learning to learn without gradient descent by
+gradient descent. In <em>Proceedings of the 34th International Conference on Machine Learning Volume 70</em>, pages 748–756. JMLR. org, 2017.</p>
+<p>[2] Olga Wichrowska, Niru Maheswaranathan, Matthew W Hoffman, Sergio Gomez Colmenarejo,
+Misha Denil, Nando de Freitas, and Jascha Sohl-Dickstein. Learned optimizers that scale and
+generalize. In <em>Proceedings of the 34th International Conference on Machine Learning Volume 70</em>, pages 3751–3760. JMLR. org, 2017.</p>
               
             </div>
           </div>

@@ -2,72 +2,72 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://example.com/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/about/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/install/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/motivation/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/dev_docs/eval/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/dev_docs/meta/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/dev_docs/network/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/dev_docs/overview/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/dev_docs/problem/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/dev_docs/train/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/dev_docs/utils/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/user_docs/eval/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/user_docs/func/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://example.com/user_docs/train/</loc>
-         <lastmod>2021-08-06</lastmod>
+         <lastmod>2021-08-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
