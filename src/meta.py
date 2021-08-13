@@ -218,24 +218,13 @@ class MetaOptimizer(object):
           meta_loss method).
     """
     self._nets = None
-    #self.dims=2
+
+    #  The number of particles. The default is 4. 
     self.num_lstm = 4
-#    pdb.set_trace()
-#    trainable = tf.constant(False, dtype = tf.bool)
-    #intra attention x_minimal verification 
-#    self.fx_minimal = [tf.Variable(float("inf"),trainable = False) for i in range(self.num_lstm)]
+
     self.fx_minimal = tf.Variable(float("inf"),trainable = False)
     self.problem = problem
-    #intra attention x_minimal if fx_minimal is satisfied
-    
-#    delta_shape=([784,20],[20,],[20,10],[10,])
-#    tensors=[]
-#    for i in range(4):
-#        tensor = tf.Variable(tf.zeros(delta_shape[i]), trainable = False)
-#        tensors.append(tensor)
-#    self.x_minimal = [tensors for i in range(self.num_lstm)]
-#    self.pre_deltas = [tensors for i in range(self.num_lstm)]
-#    self.pre_gradients = [tensors for i in range(self.num_lstm)]
+
     self.x_minimal = []
     self.pre_deltas = []
     self.pre_gradients = []
@@ -243,16 +232,6 @@ class MetaOptimizer(object):
     self.fc_kernel = []
     self.fc_bias = []
     self.fc_va = []
-#    fc_kernel_shape = ([20, 15680*2], [20, 20*2], [20, 200*2], [10, 10*2])
-#    fc_bias_shape = ([20, self.intra_features ], [20, self.intra_features], [20, self.intra_features], [10, self.intra_features])
-#    fc_va_shape=([1,20],[1,20],[1,20],[1,10])
-#    for i in range(4):
-#      sub_fc_kernel = tf.Variable(tf.random_normal(fc_kernel_shape[i]))
-#      sub_fc_bias = tf.Variable(tf.random_normal(fc_bias_shape[i]))
-#      sub_fc_va = tf.Variable(tf.ones(fc_va_shape[i]), trainable = False)
-#      self.fc_kernel.append(sub_fc_kernel)
-#      self.fc_bias.append(sub_fc_bias)
-#      self.fc_va.append(sub_fc_va)
 
     if not kwargs:
       # Use a default coordinatewise network if nothing is given. this allows

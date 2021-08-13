@@ -16,7 +16,7 @@ and explore the space of optimization algorithms.
 
 ## What are the remaining gaps?
 The target applications of previous methods are mainly focused on training deep neural networks,
-except [19] focusing on optimizing black-box functions. There are three limitations of these methods.
+except [1] focusing on optimizing black-box functions. There are three limitations of these methods.
 
 * First, they learn in a limited algorithmic space, namely point-based optimization algorithms that use
 gradients or not (including SGD and Adam). So far there is no method in learning to learn that reflects
@@ -24,9 +24,9 @@ population-based algorithms (such as evolutionary and swarm algorithms) proven p
 optimization tasks. 
 * Second, their learning is guided by a limited meta loss, often the cumulative regret
 in sampling history that primarily drives exploitation. One exception is the expected improvement
-(EI) used by [19] under Gaussian processes. 
+(EI) used by [1] under Gaussian processes. 
 * Last but not the least, these methods do not interpret the
-process of learning update formula, despite the previous usage of attention mechanisms in [20].
+process of learning update formula, despite the previous usage of attention mechanisms in [2].
 
 ## Why LOIS?
 To overcome aforementioned limitations of current learning-to-optimize methods, we present a new
@@ -41,3 +41,14 @@ algorithmic space and balance the exploitation-exploration trade-off.
 * (**What more to learn**): We design a novel architecture where a population of LSTMs jointly
 learn iterative update formula for a population of samples and embedded sample- and
 feature-level attentions to explain the formula
+
+
+## References
+
+[1] Yutian Chen, Matthew W Hoffman, Sergio Gómez Colmenarejo, Misha Denil, Timothy P
+Lillicrap, Matt Botvinick, and Nando de Freitas. Learning to learn without gradient descent by
+gradient descent. In *Proceedings of the 34th International Conference on Machine Learning Volume 70*, pages 748–756. JMLR. org, 2017.
+
+[2] Olga Wichrowska, Niru Maheswaranathan, Matthew W Hoffman, Sergio Gomez Colmenarejo,
+Misha Denil, Nando de Freitas, and Jascha Sohl-Dickstein. Learned optimizers that scale and
+generalize. In *Proceedings of the 34th International Conference on Machine Learning Volume 70*, pages 3751–3760. JMLR. org, 2017.
