@@ -129,8 +129,8 @@
 <li>
 <p><strong>Before training</strong>:</p>
 <ul>
-<li><strong>Load optimizer network congifuration</strong>: <code>config.py</code>.  The <code>train.py</code> will call <code>config.py</code> in order to red optimizer net configuration.</li>
-<li><strong>Load optimizee problem</strong>: <code>config.py</code> -&gt; <code>problems.py</code>.   The <code>train.py</code> will call <code>config.py</code>, which will call <code>problems.py</code> in order to load the optimizee problems used for training.</li>
+<li><strong>Load optimizer network congifuration</strong>: <code>utils.py</code>.  The <code>train.py</code> will call <code>utils.py</code> in order to red optimizer net configuration.</li>
+<li><strong>Load optimizee problem</strong>: <code>utils.py</code> -&gt; <code>problems.py</code>.   The <code>train.py</code> will call <code>utils.py</code>, which will call <code>problems.py</code> in order to load the optimizee problems used for training.</li>
 <li><strong>Load optimizer network</strong>: <code>meta.py</code>.  The <code>train.py</code> will use the optimizer net configuration information to build an optimizer in <code>meta.py</code>.</li>
 <li><strong>optimizer-optimizee graph</strong>: <code>meta.py</code>. The <code>meta.py</code> will also build a complete computational graph with both optimizer and optimizee.</li>
 </ul>
@@ -138,7 +138,7 @@
 <li>
 <p><strong>During training</strong>: </p>
 <ul>
-<li><strong>run every epoch</strong>: <code>config.py</code>. This file will run every epoch during training.</li>
+<li><strong>run every epoch</strong>: <code>utils.py</code>. This file will run every epoch during training.</li>
 </ul>
 </li>
 <li><strong>After training</strong>:<ul>
@@ -153,8 +153,8 @@
 <li>
 <p><strong>Before evaluation</strong>:</p>
 <ul>
-<li><strong>Load optimizer network congifuration</strong>: <code>config.py</code>.  The <code>evaluate.py</code> will call <code>config.py</code> in order to red optimizer net configuration.</li>
-<li><strong>Load optimizee problem</strong>: <code>config.py</code> -&gt; <code>problems.py</code>.   The <code>evaluate.py</code> will call <code>config.py</code>, which will call <code>problems.py</code> in order to load the optimizee problems used for evaluation.</li>
+<li><strong>Load optimizer network congifuration</strong>: <code>utils.py</code>.  The <code>evaluate.py</code> will call <code>utils.py</code> in order to red optimizer net configuration.</li>
+<li><strong>Load optimizee problem</strong>: <code>utils.py</code> -&gt; <code>problems.py</code>.   The <code>evaluate.py</code> will call <code>utils.py</code>, which will call <code>problems.py</code> in order to load the optimizee problems used for evaluation.</li>
 <li><strong>Load optimizer network</strong>: <code>meta.py</code>.  The <code>evaluate.py</code> will use the optimizer net configuration information to build an optimizer in <code>meta.py</code>.</li>
 <li><strong>optimizer-optimizee graph</strong>: <code>meta.py</code>. The <code>meta.py</code> will also build a complete computational graph with both optimizer and optimizee.</li>
 </ul>
@@ -162,7 +162,7 @@
 <li>
 <p><strong>During evaluation</strong>: </p>
 <ul>
-<li><strong>run the trajectory</strong>: <code>config.py</code>. This file will run the trajectory during evaluation.</li>
+<li><strong>run the trajectory</strong>: <code>utils.py</code>. This file will run the trajectory during evaluation.</li>
 </ul>
 </li>
 <li><strong>After evaluation</strong>:<ul>
