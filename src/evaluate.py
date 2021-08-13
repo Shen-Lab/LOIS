@@ -22,7 +22,7 @@ flags.DEFINE_string("optimizer", "L2L", "Optimizer.")
 flags.DEFINE_string("path", None, "Path to saved meta-optimizer network.")
 flags.DEFINE_integer("num_epochs", 1, "Number of evaluation epochs.")
 flags.DEFINE_integer("seed", None, "Seed for TensorFlow's RNG.")
-
+flags.DEFINE_integer("num_particle", 4, "Number of evaluation epochs.") # The number of particles
 flags.DEFINE_string("problem", "simple", "Type of problem.")
 flags.DEFINE_integer("num_steps", 250,
                      "Number of optimization steps per epoch.")
@@ -52,7 +52,7 @@ def main(_):
   elif FLAGS.optimizer == "L2L":
     if FLAGS.path is None:
       logging.warning("Evaluating untrained L2L optimizer")
-    optimizer = meta.MetaOptimizer(FLAGS.problem, **net_config)
+    optimizer = meta.MetaOptimizer(FLAGS.problem,, FLAGS.num_particle,  **net_config)
     meta_loss = optimizer.meta_loss(problem, 1, net_assignments=net_assignments, model_path = FLAGS.path)
     loss, update, reset, cost_op, x_final, constant = meta_loss
   else:

@@ -207,7 +207,7 @@ class MetaOptimizer(object):
   tasks.
   """
 
-  def __init__(self, problem, **kwargs):
+  def __init__(self, problem, num_lstm, **kwargs):
     """Creates a MetaOptimizer.
 
     Args:
@@ -220,7 +220,7 @@ class MetaOptimizer(object):
     self._nets = None
 
     #  The number of particles. The default is 4. 
-    self.num_lstm = 4
+    self.num_lstm = num_lstm
 
     self.fx_minimal = tf.Variable(float("inf"),trainable = False)
     self.problem = problem
