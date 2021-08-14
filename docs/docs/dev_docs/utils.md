@@ -1,4 +1,4 @@
-# [utils.py](https://github.com/Shen-Lab/LOIS/blob/master/src/utils.py)
+# [util.py](https://github.com/Shen-Lab/LOIS/blob/master/src/util.py)
 
 This file has two main usages:
 * To run every eporch for training or evaluation

@@ -24,7 +24,7 @@ flags.DEFINE_integer("num_epochs", 1000, "Number of training epochs.")
 flags.DEFINE_integer("log_period", 100, "Log period.")
 flags.DEFINE_integer("evaluation_period", 100, "Evaluation period.")
 flags.DEFINE_integer("evaluation_epochs", 20, "Number of evaluation epochs.")
-flags.DEFINE_integer("num_particle", 4, "Number of evaluation epochs.")
+flags.DEFINE_integer("num_particle", 4, "Number of evaluation epochs.") # The number of particles
 flags.DEFINE_string("problem", "simple", "Type of problem.")
 flags.DEFINE_integer("num_steps", 100,
                      "Number of optimization steps per epoch.")
